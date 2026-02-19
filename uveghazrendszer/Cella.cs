@@ -44,11 +44,19 @@ namespace uveghazrendszer
 			{
 				this.noveny = noveny;
 				this.egyedSzam = egyedSzam;
+				if (this.egyedSzam > noveny.OptimalSuruseg)
+				{
+					this.noveny.EgeszsegiAllapot -= 2;
+				}
 				return true;
 			}
 			else if (noveny == this.noveny)
 			{
 				this.egyedSzam += egyedSzam;
+				if (this.egyedSzam > noveny.OptimalSuruseg)
+				{
+					this.noveny.EgeszsegiAllapot -= 2;
+				}
 				return true;
 			}
 			else
@@ -57,5 +65,19 @@ namespace uveghazrendszer
 			}
 		}
 
+		public void Noveles(int egyedszam)
+		{
+			this.Beultet(this.noveny, egyedszam);
+		}
+
+		public void Csokkentes(int egyedszam)
+		{
+			this.egyedSzam -= egyedszam;
+			if (this.egyedSzam <= 0)
+			{
+				this.egyedSzam = 0;
+				this.noveny = null;
+			}
+		}
 	}
 }
