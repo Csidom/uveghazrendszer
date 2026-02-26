@@ -25,6 +25,9 @@
 
 			uveghaz.Noveles(1, 1, 15);
 			uveghaz.Noveles(2, 2, 1);
+
+			uveghaz.Szomszedok(2, 2);
+
 		}
     }
 }

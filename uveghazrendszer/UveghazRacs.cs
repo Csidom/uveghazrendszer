@@ -69,6 +69,17 @@ namespace uveghazrendszer
 			Console.WriteLine($"{x}, {y} ágyás növénye, a(z) {kert[x - 1, y - 1].Noveny.Nev}, egyedszám: {kert[x - 1, y - 1].EgyedSzam}");
 		}
 
+		public void CellaUrit(int x, int y)
+		{
+			kert[x-1,y-1].Urit();
+		}
+
+		public void Szomszedok(int x, int y)
+		{
+			Console.WriteLine("Gatya");
+			//Console.WriteLine($"A {x}, {y} cellával szomszédos cellák: {kert[x-2,y-2]}, {kert[x, y]}");
+		}
+
 		public void Kiiratas()
 		{
 			for(int i = 0; i < this.kert.GetLength(0); i++)
